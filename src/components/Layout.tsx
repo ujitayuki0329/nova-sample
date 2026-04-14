@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
 const defaultTitle = '株式会社NOVA | 人々の可能性を広げる'
@@ -43,6 +43,12 @@ export function Layout() {
   const closeMenu = () => setMenuOpen(false)
 
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
+
+  useEffect(() => {
     const pageSeo = pageSeoByPath[location.pathname] ?? {
       title: defaultTitle,
       description: defaultDescription,
@@ -53,6 +59,12 @@ export function Layout() {
     setMetaTag('meta[property="og:title"]', 'property', 'og:title', defaultOgTitle)
     setMetaTag('meta[property="og:description"]', 'property', 'og:description', defaultOgDescription)
     setMetaTag('meta[property="og:type"]', 'property', 'og:type', 'website')
+  }, [location.pathname])
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
   }, [location.pathname])
 
   useEffect(() => {

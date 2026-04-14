@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
+const defaultTitle = '株式会社NOVA | 人々の可能性を広げる'
+const defaultDescription =
+  'AIが業務を引き受ける。人は、人にしかできないことへ。月160時間の単純作業を自動化し、経営者の判断速度を次元ごと変える。'
+const defaultOgTitle = '株式会社NOVA | 人々の可能性を広げる'
+const defaultOgDescription = 'AIが業務を引き受ける。人は、人にしかできないことへ。'
+
 const links = [
   { to: '/', label: 'ホーム' },
   { to: '/services', label: '事業内容' },
@@ -8,11 +14,46 @@ const links = [
   { to: '/company', label: '会社概要' },
 ]
 
+type PageSeo = {
+  title: string
+  description: string
+}
+
+const pageSeoByPath: Record<string, PageSeo> = {
+  '/company': {
+    title: '会社概要 | 株式会社NOVA',
+    description: '株式会社NOVAの会社概要。理念・ビジョン・代表メッセージ・会社情報・沿革。',
+  },
+}
+
+function setMetaTag(selector: string, attr: 'name' | 'property', key: string, content: string) {
+  let element = document.head.querySelector<HTMLMetaElement>(selector)
+  if (!element) {
+    element = document.createElement('meta')
+    element.setAttribute(attr, key)
+    document.head.appendChild(element)
+  }
+  element.setAttribute('content', content)
+}
+
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
   const closeMenu = () => setMenuOpen(false)
+
+  useEffect(() => {
+    const pageSeo = pageSeoByPath[location.pathname] ?? {
+      title: defaultTitle,
+      description: defaultDescription,
+    }
+
+    document.title = pageSeo.title
+    setMetaTag('meta[name="description"]', 'name', 'description', pageSeo.description)
+    setMetaTag('meta[property="og:title"]', 'property', 'og:title', defaultOgTitle)
+    setMetaTag('meta[property="og:description"]', 'property', 'og:description', defaultOgDescription)
+    setMetaTag('meta[property="og:type"]', 'property', 'og:type', 'website')
+  }, [location.pathname])
 
   useEffect(() => {
     setMenuOpen(false)

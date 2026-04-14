@@ -13,22 +13,28 @@ const companyInfo = [
 
 export function CompanyPage() {
   return (
-    <>
+    <div className="company-page">
       <section className="section services-hero company-heading" data-animate="fade">
-        <div className="container services-hero-inner" data-animate="fade-up">
+        <div className="container services-hero-inner company-hero-inner" data-animate="fade-up">
           <p className="services-kicker">Company</p>
           <h1 className="services-title">会社概要</h1>
           <p className="services-lead">企業情報、代表挨拶、アクセス情報を掲載しています。</p>
+          <div className="company-hero-meta">
+            <span>NOVA CORPORATION</span>
+            <span>TOKYO</span>
+            <span>SINCE 2026</span>
+          </div>
         </div>
       </section>
 
-      <section className="section" data-animate="fade">
+      <section className="section company-info-section" data-animate="fade">
         <div className="container">
           <p className="eyebrow">Company Information</p>
           <h2>会社情報</h2>
           <div className="company-overview" data-animate="fade-up">
             <aside className="company-overview-logo">
               <img src="/logo-nova.svg" alt="NOVA ロゴ" />
+              <p>人々の可能性を広げる。AIで業務を再設計し、人が価値を生み出す仕事に集中できる組織をつくります。</p>
             </aside>
             <div className="company-info-table">
               {companyInfo.map((item) => (
@@ -42,14 +48,14 @@ export function CompanyPage() {
         </div>
       </section>
 
-      <section className="section alt" data-animate="fade">
+      <section className="section alt company-message-section" data-animate="fade">
         <div className="container">
           <p className="eyebrow">Message</p>
           <h2>代表者挨拶</h2>
           <div className="company-message">
             <div className="company-ceo-block" data-animate="fade-right">
               <img
-                src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="https://images.pexels.com/photos/5439384/pexels-photo-5439384.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt="代表者写真"
               />
               <p className="company-ceo-title">代表取締役</p>
@@ -70,19 +76,24 @@ export function CompanyPage() {
         </div>
       </section>
 
-      <section className="section" data-animate="fade">
+      <section className="section company-access-section" data-animate="fade">
         <div className="container">
           <p className="eyebrow">Access</p>
           <h2>アクセス</h2>
           <div className="company-access">
             <div className="company-map-placeholder" data-animate="fade-right">
-              <p>NOVA TOKYO OFFICE</p>
+              <iframe
+                title="NOVA 東京オフィス"
+                src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <div data-animate="fade-left" data-delay="120">
               <p>
                 〒105-0001
                 <br />
-                東京都港区虎ノ門3-7-8 虎ノ門アネックス 501
+                東京都港区芝公園4-2-8 東京タワー付近
               </p>
               <p>
                 東京メトロ日比谷線「虎ノ門ヒルズ駅」徒歩4分
@@ -110,6 +121,6 @@ export function CompanyPage() {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   )
 }

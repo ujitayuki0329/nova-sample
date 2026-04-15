@@ -713,7 +713,7 @@ ul {
 .footer-title {
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.72rem;
+  font-size: 0.92rem;
   color: #e0ece7;
   margin: 0 0 16px;
 }
@@ -1246,10 +1246,12 @@ ul {
 }
 
 .company-access > div:last-child {
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(182, 208, 195, 0.48);
-  background: linear-gradient(165deg, #ffffff, #f5faf7);
+  padding: 12px 0 12px 20px;
+  border: 0;
+  border-left: 2px solid rgba(95, 159, 128, 0.44);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 @media (max-width: 920px) {

@@ -71,9 +71,11 @@
 }
 
 .brand-logo {
-  width: auto;
-  height: 40px;
+  width: 170px;
+  height: auto;
   display: block;
+  object-fit: contain;
+  object-position: center;
 }
 
 .nav {
@@ -696,9 +698,10 @@ ul {
 }
 
 .footer-logo {
-  height: 40px;
-  width: auto;
-  filter: brightness(1.04) saturate(0.95);
+  width: 152px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .footer-brand p {
@@ -898,8 +901,10 @@ ul {
 }
 
 .contact-sidebar-logo {
-  width: 170px;
+  width: 190px;
   height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .contact-sidebar h3 {
@@ -1130,8 +1135,10 @@ ul {
 }
 
 .company-overview-logo img {
-  width: 178px;
+  width: 190px;
   height: auto;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
@@ -1259,7 +1266,8 @@ ul {
   }
 
   .brand-logo {
-    height: 34px;
+    width: 148px;
+    height: auto;
   }
 
   .footer-inner {
@@ -1341,7 +1349,8 @@ ul {
   }
 
   .company-overview-logo img {
-    width: 160px;
+    width: 170px;
+    height: auto;
   }
 
   .company-overview-logo p {

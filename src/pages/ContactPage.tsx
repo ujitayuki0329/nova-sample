@@ -15,7 +15,7 @@ export function ContactPage() {
         <div className="container">
         <div className="contact-layout top-margin">
           <aside className="contact-sidebar" data-animate="fade-right">
-            <img src="/logo-nova.svg" alt="NOVA ロゴ" className="contact-sidebar-logo" />
+            <img src="/logo-nova.png" alt="NOVA ロゴ" className="contact-sidebar-logo" />
             <h3>お問い合わせ先</h3>
             <ul>
               <li>

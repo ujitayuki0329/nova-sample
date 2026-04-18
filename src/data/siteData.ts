@@ -13,7 +13,7 @@ export const services = [
   },
   {
     id: '03',
-    title: '金融事業',
+    title: '金融教育事業',
     description:
       '財務可視化・資金計画・意思決定支援を通じて、経営の判断精度と企業価値向上をサポートします。',
   },

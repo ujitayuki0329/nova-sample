@@ -1,26 +1,31 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const companyInfo = [
+  { label: '法人番号', value: '4010401197100' },
   { label: '会社名', value: '株式会社NOVA' },
+  { label: '所在地', value: '〒106-0032 東京都港区六本木3丁目16番12号六本木KSビル5F' },
   {
     label: '代表者',
     value: (
       <>
-        代表取締役　若佐 陸王
+        代表取締役 若佐陸王
         <br />
-        取締役　野村 拓海
+        取締役 加藤寛也
       </>
     ),
   },
-  { label: '所在地', value: '〒105-0001 東京都港区虎ノ門3-7-8 虎ノ門アネックス 501' },
-  { label: '設立', value: '2026年1月' },
-  { label: '資本金', value: '5,000,000円' },
-  { label: '事業内容', value: 'IT事業 / BPO事業 / 金融事業' },
-  { label: '営業時間', value: '平日 10:00 - 18:00' },
-  { label: '連絡先', value: 'info@nova.co.jp' },
+  { label: '設立', value: '2026年3月5日' },
+  { label: '事業内容', value: 'IT事業 / BPO事業 / 金融教育事業' },
+  {
+    label: '連絡先',
+    value: <a href="mailto:daily.work@nova-info.com">daily.work@nova-info.com</a>,
+  },
 ]
 
 export function CompanyPage() {
+  const [activeMessageTab, setActiveMessageTab] = useState<'ceo' | 'director'>('ceo')
+
   return (
     <div className="company-page">
       <section className="section services-hero company-heading" data-animate="fade">
@@ -61,36 +66,62 @@ export function CompanyPage() {
         <div className="container">
           <p className="eyebrow">Message</p>
           <h2>代表者挨拶</h2>
+          <div className="message-tabs" data-animate="fade-up">
+            <button
+              type="button"
+              className={activeMessageTab === 'ceo' ? 'is-active' : ''}
+              onClick={() => setActiveMessageTab('ceo')}
+            >
+              代表取締役
+            </button>
+            <button
+              type="button"
+              className={activeMessageTab === 'director' ? 'is-active' : ''}
+              onClick={() => setActiveMessageTab('director')}
+            >
+              取締役
+            </button>
+          </div>
           <div className="company-message">
             <div className="company-ceo-block" data-animate="fade-right">
-              <img
-                src="https://images.pexels.com/photos/5439384/pexels-photo-5439384.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="代表者写真"
-              />
-              <p className="company-ceo-title">代表取締役</p>
-              <p className="company-ceo-name">若佐 陸王</p>
+              {activeMessageTab === 'ceo' ? (
+                <>
+                  <img src="/ceo-wakasa.png" alt="代表取締役 若佐陸王" />
+                  <p className="company-ceo-title">代表取締役</p>
+                  <p className="company-ceo-name">若佐陸王</p>
+                </>
+              ) : (
+                <>
+                  <img src="/director-kato.png" alt="取締役 加藤寛也" />
+                  <p className="company-ceo-title">取締役</p>
+                  <p className="company-ceo-name">加藤寛也</p>
+                </>
+              )}
             </div>
             <div data-animate="fade-left" data-delay="120">
-              <h3>「作業」を減らし、「意思決定」を加速させる。</h3>
-              <p>
-                経営者として最も悔しいのは、「やりたいことではなく、やらなければならないことに時間を奪われる」瞬間です。
-              </p>
-              <p>
-                私がこれまで経営の現場で見てきたのは、優秀な経営者が、本来使うべき判断や戦略の時間を、請求書の確認、
-                日程調整、問い合わせの振り分けといった業務に費やしている現実でした。
-              </p>
-              <p>
-                「作業」を減らし、「意思決定」を加速させる。これが、NOVAが存在する理由です。AIと自動化技術は、今この瞬間も進化しています。
-                その力を正しく設計・実装すれば、月160時間以上の業務を削減し、経営者が本来向き合うべき「戦略・人・未来」に時間を取り戻すことができます。
-              </p>
-              <p>
-                私たちは、ツールを売りません。成果が出るまで伴走します。導入して終わりではなく、毎月改善し、
-                経営者が「あのとき頼んで良かった」と思い続けられる関係を築くことが、私たちのゴールです。
-              </p>
-              <p>
-                可能性を、解き放て。この言葉を胸に、一社でも多くの企業と、そこで働く人々の未来を変えていきます。
-              </p>
-              <p className="card-id">代表取締役 若佐 陸王</p>
+              {activeMessageTab === 'ceo' ? (
+                <>
+                  <h3>「作業」を減らし、「意思決定」を加速させる。</h3>
+                  <p>
+                    経営者として最も悔しいのは、「やりたいことではなく、やらなければならないことに時間を奪われる」瞬間です。
+                  </p>
+                  <p>
+                    生成AIと業務設計を掛け合わせ、経営者が本来向き合うべき戦略・人材・未来へ時間を再配分できる組織づくりを推進します。
+                  </p>
+                  <p className="card-id">代表取締役 若佐陸王</p>
+                </>
+              ) : (
+                <>
+                  <h3>「数字と仕組みで、経営に再現性を。」</h3>
+                  <p>
+                    財務とオペレーションの両面から、企業成長を妨げるボトルネックを可視化し、改善サイクルを定着させます。
+                  </p>
+                  <p>
+                    現場で機能する設計と継続的な運用改善を通じて、組織全体の意思決定スピードと実行力を高めていきます。
+                  </p>
+                  <p className="card-id">取締役 加藤寛也</p>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -111,14 +142,14 @@ export function CompanyPage() {
             </div>
             <div data-animate="fade-left" data-delay="120">
               <p>
-                〒105-0001
+                〒106-0032
                 <br />
-                東京都港区芝公園4-2-8 東京タワー付近
+                東京都港区六本木3丁目16番12号 六本木KSビル5F
               </p>
               <p>
-                東京メトロ日比谷線「虎ノ門ヒルズ駅」徒歩4分
+                東京メトロ日比谷線・都営大江戸線「六本木駅」徒歩6分
                 <br />
-                東京メトロ銀座線「虎ノ門駅」徒歩8分
+                東京メトロ南北線「六本木一丁目駅」徒歩8分
               </p>
             </div>
           </div>

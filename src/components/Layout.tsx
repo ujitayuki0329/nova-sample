@@ -173,8 +173,10 @@ export function Layout() {
             <div className="footer-contact" data-animate="fade-up" data-delay="200">
               <p className="footer-title">Contact</p>
               <p>株式会社NOVA</p>
-              <p>〒105-0001 東京都港区虎ノ門</p>
-              <p>平日 10:00 - 18:00</p>
+              <p>〒106-0032 東京都港区六本木3丁目16番12号 六本木KSビル5F</p>
+              <p>
+                <a href="mailto:daily.work@nova-info.com">daily.work@nova-info.com</a>
+              </p>
               <NavLink to="/contact" className="footer-contact-link">
                 お問い合わせはこちら
               </NavLink>

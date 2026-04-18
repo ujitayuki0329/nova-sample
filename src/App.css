@@ -1118,6 +1118,12 @@ ul {
   line-height: 1.8;
 }
 
+.company-info-table a {
+  color: #2c684f;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .company-overview {
   margin-top: 18px;
   display: grid;
@@ -1160,6 +1166,43 @@ ul {
   border: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.message-tabs {
+  margin-top: 14px;
+  display: inline-flex;
+  border: 1px solid rgba(157, 190, 174, 0.42);
+  border-radius: 13px;
+  padding: 5px;
+  background: linear-gradient(165deg, #ffffff, #eef6f1);
+  gap: 5px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 20px rgba(40, 88, 67, 0.08);
+}
+
+.message-tabs button {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #4b665a;
+  border-radius: 9px;
+  padding: 9px 16px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.message-tabs button:hover {
+  color: #2a5743;
+  background: rgba(95, 159, 128, 0.1);
+  border-color: rgba(95, 159, 128, 0.22);
+}
+
+.message-tabs button.is-active {
+  color: #fff;
+  border-color: rgba(43, 101, 77, 0.75);
+  background: linear-gradient(130deg, #66a685, #2c684f);
+  box-shadow: 0 10px 20px rgba(47, 109, 83, 0.3);
 }
 
 .company-message img {
@@ -1362,6 +1405,12 @@ ul {
   .company-message,
   .company-access {
     grid-template-columns: 1fr;
+  }
+
+  .message-tabs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .philosophy-grid,

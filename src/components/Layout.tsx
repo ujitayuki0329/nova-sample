@@ -95,7 +95,7 @@ export function Layout() {
       <header className="header">
         <div className="container header-inner">
           <NavLink to="/" className="brand">
-            <img src="/logo-nova.png" alt="NOVA ロゴ" className="brand-logo" />
+            <img src="/logo-nova-header.png" alt="NOVA ロゴ" className="brand-logo" />
           </NavLink>
 
           <button
@@ -138,7 +138,7 @@ export function Layout() {
         <div className="container footer-inner">
           <div className="footer-main">
             <div className="footer-brand" data-animate="fade-up">
-              <img src="/logo-nova-footer.png" alt="NOVA ロゴ" className="footer-logo" />
+              <img src="/logo-nova-header.png" alt="NOVA ロゴ" className="footer-logo" />
               <p>人々の可能性を広げる。AIで業務を再設計し、人が価値を生み出す仕事に集中できる組織をつくります。</p>
               <div className="footer-sns">
                 <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">

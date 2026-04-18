@@ -3,7 +3,6 @@ export function ContactPage() {
     <>
       <section className="section services-hero contact-heading-hero" data-animate="fade">
         <div className="container services-hero-inner" data-animate="fade-up">
-          <p className="services-kicker">Contact</p>
           <h1 className="services-title">お問い合わせ</h1>
           <p className="services-lead">
             お見積り・ご質問・ご相談はフォームよりお問い合わせください。内容を確認後、担当者よりご連絡いたします。
@@ -15,7 +14,7 @@ export function ContactPage() {
         <div className="container">
         <div className="contact-layout top-margin">
           <aside className="contact-sidebar" data-animate="fade-right">
-            <img src="/logo-nova.png" alt="NOVA ロゴ" className="contact-sidebar-logo" />
+            <img src="/logo-nova-side.png" alt="NOVA ロゴ" className="contact-sidebar-logo" />
             <h3>お問い合わせ先</h3>
             <ul>
               <li>

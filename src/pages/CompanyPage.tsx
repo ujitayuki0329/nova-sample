@@ -47,7 +47,7 @@ export function CompanyPage() {
           <h2>会社情報</h2>
           <div className="company-overview" data-animate="fade-up">
             <aside className="company-overview-logo">
-              <img src="/logo-nova.png" alt="NOVA ロゴ" />
+              <img src="/logo-nova-side.png" alt="NOVA ロゴ" />
               <p>人々の可能性を広げる。AIで業務を再設計し、人が価値を生み出す仕事に集中できる組織をつくります。</p>
             </aside>
             <div className="company-info-table">

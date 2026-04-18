@@ -4,7 +4,16 @@ import { Link } from 'react-router-dom'
 const companyInfo = [
   { label: '法人番号', value: '4010401197100' },
   { label: '会社名', value: '株式会社NOVA' },
-  { label: '所在地', value: '〒106-0032 東京都港区六本木3丁目16番12号六本木KSビル5F' },
+  {
+    label: '所在地',
+    value: (
+      <>
+        〒106-0032
+        <br />
+        東京都港区六本木3丁目16番12号六本木KSビル5F
+      </>
+    ),
+  },
   {
     label: '代表者',
     value: (
